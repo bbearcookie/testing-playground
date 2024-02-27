@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { baseInstance } from './api/instance';
 import TestComponent from './components/TestComponent';
 import SimpleComponent from './components/SimpleComponent';
+import BearCounter from './components/BearCounter';
 
 function App() {
   const handleClick = async () => {
@@ -18,6 +19,7 @@ function App() {
         <TestComponent />
       </Suspense>
       <SimpleComponent />
+      <BearCounter />
     </>
   );
 }
