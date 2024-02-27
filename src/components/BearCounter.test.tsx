@@ -1,14 +1,7 @@
 import { render, screen } from '@/utils/testing-library';
 import BearCounter from './BearCounter';
-import useBearStore from '@/store/useBearStore';
-
-const initialState = useBearStore.getState();
 
 describe('BearCounter', () => {
-  beforeEach(() => {
-    useBearStore.setState(initialState);
-  });
-
   it('처음에는 0마리여야 한다.', () => {
     render(<BearCounter />);
 
