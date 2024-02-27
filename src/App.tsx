@@ -3,6 +3,8 @@ import { baseInstance } from './api/instance';
 import TestComponent from './components/TestComponent';
 import SimpleComponent from './components/SimpleComponent';
 import BearCounter from './components/BearCounter';
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar';
 
 function App() {
   const handleClick = async () => {
@@ -20,6 +22,9 @@ function App() {
       </Suspense>
       <SimpleComponent />
       <BearCounter />
+      <Navbar />
+      <hr />
+      <Outlet />
     </>
   );
 }
