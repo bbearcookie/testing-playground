@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { baseInstance } from './api/instance';
 import TestComponent from './components/TestComponent';
+import SimpleComponent from './components/SimpleComponent';
 
 function App() {
   const handleClick = async () => {
@@ -16,6 +17,7 @@ function App() {
       <Suspense fallback={<>로딩중...</>}>
         <TestComponent />
       </Suspense>
+      <SimpleComponent />
     </>
   );
 }
