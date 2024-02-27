@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { baseInstance } from './api/instance';
-import TestComponent from './components/TestComponent';
+import MSWComponent from './components/MSWComponent';
 import SimpleComponent from './components/SimpleComponent';
 import BearCounter from './components/BearCounter';
 import { Outlet } from 'react-router-dom';
@@ -18,7 +18,7 @@ function App() {
       <div>hello world</div>
       <button onClick={handleClick}>API call</button>
       <Suspense fallback={<>로딩중...</>}>
-        <TestComponent />
+        <MSWComponent />
       </Suspense>
       <SimpleComponent />
       <BearCounter />
