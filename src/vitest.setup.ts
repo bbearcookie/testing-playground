@@ -4,6 +4,14 @@ import '@testing-library/jest-dom'; // toBeInTheDocument 같은 Matcher를 사�
 
 vi.mock('zustand');
 
+vi.mock('react-toastify', () => ({
+  toast: {
+    success: vi.fn(),
+    warn: vi.fn(),
+    error: vi.fn(),
+  },
+}));
+
 beforeAll(() => {
   server.listen({
     onUnhandledRequest: 'error',

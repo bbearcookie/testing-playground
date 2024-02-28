@@ -15,7 +15,18 @@ const testHandler = [
   http.post(baseURL(API_PATHS.TEST_ID), async () => {
     await delay(300);
 
-    return HttpResponse.json('목 핸들러가 정상적으로 데이터를 받았습니다.');
+    const status: number = 200;
+
+    switch (status) {
+      case 200:
+        return HttpResponse.json({
+          message: '요청 성공',
+        });
+      case 400:
+        return new HttpResponse('에러에러', {
+          status: 400,
+        });
+    }
   }),
 ];
 

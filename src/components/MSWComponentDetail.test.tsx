@@ -4,12 +4,9 @@ import { server } from '@/mocks/server';
 import { HttpResponse, http } from 'msw';
 import { baseURL } from '@/utils/mswUtils';
 import { API_PATHS } from '@/constants/paths';
+import { toast } from 'react-toastify';
 
 describe('MSWComponentDetail', () => {
-  beforeEach(() => {
-    global.console = { ...global.console, error: vi.fn() };
-  });
-
   it('7번 데이터가 정상적으로 렌더링되어야 합니다.', async () => {
     render(<MSWComponentDetail testId={7} />);
 
@@ -30,6 +27,7 @@ describe('MSWComponentDetail', () => {
     user.click(button);
 
     expect(await screen.findByText('에러에러')).toBeInTheDocument();
+    expect(toast.error).toHaveBeenCalledTimes(1);
   });
 
   it('5번 데이터가 정상적으로 렌더링되어야 합니다.', async () => {
