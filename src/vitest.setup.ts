@@ -5,7 +5,9 @@ import '@testing-library/jest-dom'; // toBeInTheDocument 같은 Matcher를 사�
 vi.mock('zustand');
 
 beforeAll(() => {
-  server.listen();
+  server.listen({
+    onUnhandledRequest: 'error',
+  });
 });
 
 afterEach(() => {
