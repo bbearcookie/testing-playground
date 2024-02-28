@@ -1,16 +1,9 @@
 import React, { ReactElement, Suspense } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
 import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-    },
-  },
-});
+import { queryClient } from '@/api/queryClient';
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => {
   return (

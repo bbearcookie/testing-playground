@@ -2,7 +2,6 @@ import { baseInstance } from '@/api/instance';
 import { TestType } from '@/types/test';
 import { useMutation, useSuspenseQuery } from '@tanstack/react-query';
 import { isAxiosError } from 'axios';
-import { toast } from 'react-toastify';
 
 interface MSWComponentDetailProps {
   testId: number;
@@ -21,14 +20,6 @@ const MSWComponentDetail = ({ testId }: MSWComponentDetailProps) => {
     mutationFn: async () => {
       const { data } = await baseInstance.post(`/test/${testId}`);
       return data;
-    },
-    onError: (err) => {
-      const message = isAxiosError(err)
-        ? err.response?.data || err.message
-        : err.message;
-
-      console.error(err);
-      toast.error(message);
     },
   });
 
